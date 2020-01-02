@@ -25,6 +25,7 @@ except ImportError:
 
 from . import __author__, __copyright__, __license__, __version__, TIMEOUT
 from .simplexml import SimpleXMLElement, TYPE_MAP, Struct
+from packaging.version import Version
 
 log = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ class TransportBase:
 #
 try:
     import httplib2
-    if sys.version > '3' and httplib2.__version__ <= "0.7.7":
+    if sys.version > '3' and Version(httplib2.__version__) <= Version("0.7.7"):
         import http.client
         # httplib2 workaround: check_hostname needs a SSL context with either 
         #                      CERT_OPTIONAL or CERT_REQUIRED
