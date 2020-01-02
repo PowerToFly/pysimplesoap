@@ -25,7 +25,10 @@ except ImportError:
 
 from . import __author__, __copyright__, __license__, __version__, TIMEOUT
 from .simplexml import SimpleXMLElement, TYPE_MAP, Struct
-from packaging.version import Version
+try
+    from packaging.version import Version
+except ImportError:
+    pass
 
 log = logging.getLogger(__name__)
 
