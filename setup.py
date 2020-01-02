@@ -47,4 +47,7 @@ setup(
         "Topic :: Communications",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    install_requires=[
+        'packaging==19.2'
+    ]
 )
